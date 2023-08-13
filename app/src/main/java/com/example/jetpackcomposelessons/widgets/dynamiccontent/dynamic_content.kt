@@ -19,53 +19,53 @@ import androidx.compose.ui.tooling.preview.Preview
 
 val namesList: ArrayList<String> = arrayListOf("pratik","andrea","diana","nikhil");
 
-@Composable
-fun MainScreen(){
-    val greetingListState = remember { mutableStateListOf<String>(namesList[0]) }
-    val textFieldState = remember { mutableStateOf("") }
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.SpaceEvenly,
-        horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-        GreetingList(
-            greetingListState,
-            { greetingListState.add(textFieldState.value) },
-            textFieldState.value,
-            { newName -> textFieldState.value = newName }
-        )
-    }
-}
-
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun GreetingList(
-    namesList: List<String>,
-    onClick: () -> Unit,
-    newTextFieldValue: String,
-    UpdateTextFieldValue: (newName: String) -> Unit
-
-){
-
-    for (name in namesList){
-        Greeting(name = name)
-    }
-    TextField(value = newTextFieldValue, onValueChange = UpdateTextFieldValue)
-    Button(
-        modifier = Modifier.wrapContentSize(align = Alignment.Center),
-        onClick = onClick
-    ){
-        Text(text = "Add New Name")
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingListPreview(){
-    MainScreen();
-}
-@Composable
-fun Greeting(name: String){
-    Text(text = "Hello $name",
-    style= MaterialTheme.typography.headlineMedium)
-}
+//@Composable
+//fun MainScreen(){
+//    val greetingListState = remember { mutableStateListOf<String>(namesList[0]) }
+//    val textFieldState = remember { mutableStateOf("") }
+//    Column(
+//        modifier = Modifier.fillMaxSize(),
+//        verticalArrangement = Arrangement.SpaceEvenly,
+//        horizontalAlignment = Alignment.CenterHorizontally
+//        ) {
+//        GreetingList(
+//            greetingListState,
+//            { greetingListState.add(textFieldState.value) },
+//            textFieldState.value,
+//            { newName -> textFieldState.value = newName }
+//        )
+//    }
+//}
+//
+//@OptIn(ExperimentalMaterial3Api::class)
+//@Composable
+//fun GreetingList(
+//    namesList: List<String>,
+//    onClick: () -> Unit,
+//    newTextFieldValue: String,
+//    UpdateTextFieldValue: (newName: String) -> Unit
+//
+//){
+//
+//    for (name in namesList){
+//        Greeting(name = name)
+//    }
+//    TextField(value = newTextFieldValue, onValueChange = UpdateTextFieldValue)
+//    Button(
+//        modifier = Modifier.wrapContentSize(align = Alignment.Center),
+//        onClick = onClick
+//    ){
+//        Text(text = "Add New Name")
+//    }
+//}
+//
+//@Preview(showBackground = true)
+//@Composable
+//fun GreetingListPreview(){
+//    MainScreen();
+//}
+//@Composable
+//fun Greeting(name: String){
+//    Text(text = "Hello $name",
+//    style= MaterialTheme.typography.headlineMedium)
+//}
